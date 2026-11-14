@@ -1,0 +1,24 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "SensorReading",
+  "type": "object",
+  "required": ["t", "duty", "current", "voltage", "temp_motor", "temp_ambient", "humidity", "vib_rms", "gas"],
+  "properties": {
+    "t":            { "type": "number", "description": "Temps en secondes" },
+    "duty":         { "type": "number", "minimum": 0, "maximum": 100, "description": "Vitesse commandée (%)" },
+    "current":      { "type": "number", "description": "Courant moteur (A)" },
+    "voltage":      { "type": "number", "description": "Tension d'alimentation (V)" },
+    "temp_motor":   { "type": "number", "description": "Température moteur (°C)" },
+    "temp_ambient": { "type": "number", "description": "Température ambiante (°C)" },
+    "humidity":     { "type": "number", "minimum": 0, "maximum": 100, "description": "Humidité (%)" },
+    "vib_rms":      { "type": "number", "minimum": 0, "description": "Vibration RMS (g)" },
+    "gas":          { "type": "number", "minimum": 0, "description": "Capteur gaz/fumée (valeur brute ou ppm)" }
+  }
+}
+
+
+
+
+
+
+
