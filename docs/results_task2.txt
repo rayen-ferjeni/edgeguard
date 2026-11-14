@@ -1,0 +1,29 @@
+constante de temps thermique estimée : tau = 300 s
+
+=== Résumé ===
+                          précision    rappel        F1 fausses_alertes_par_h anomalies_détectées
+baseline ±3σ               0.933036   0.21005  0.342904              9.052808                 1/6
+z-score (brut)             0.765125   0.21608  0.336991                   0.0                 1/6
+z-score (+résidus)         0.852665  0.820101  0.836066                   0.0                 5/6
+IsoForest brut (99.9)           0.0       0.0       0.0                   0.0                 0/6
+IsoForest +résidus (99.9)       0.0       0.0       0.0                   0.0                 0/6
+IsoForest +résidus (99)    0.758389  0.227136  0.349575             31.383068                 1/6 
+
+=== Anomalie détectée ? (>= 20 % de lignes en alerte) ; délai en s ===
+              baseline ±3σ  z-score (brut)  z-score (+résidus)  IsoForest brut (99.9)  IsoForest +résidus (99.9)  IsoForest +résidus (99)
+scenario                                                                                                                                 
+gas_leak              True            True                True                  False                      False                    False
+sensor_fault         False           False                True                  False                      False                     True
+overheat             False           False                True                  False                      False                    False
+overload             False           False                True                  False                      False                    False
+drift                False           False               False                  False                      False                    False
+imbalance            False           False                True                  False                      False                    False 
+
+              baseline ±3σ  z-score (brut)  z-score (+résidus) IsoForest brut (99.9) IsoForest +résidus (99.9)  IsoForest +résidus (99)
+scenario                                                                                                                               
+gas_leak              21.0            15.0                21.0                  None                      None                     87.0
+sensor_fault           NaN           117.0                 9.0                  None                      None                     20.0
+overheat               NaN             NaN                18.0                  None                      None                    128.0
+overload               NaN             NaN                 2.0                  None                      None                      7.0
+drift                  NaN             NaN                 NaN                  None                      None                      NaN
+imbalance              NaN             NaN                31.0                  None                      None                      NaN
